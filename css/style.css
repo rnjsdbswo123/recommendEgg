@@ -1,0 +1,12 @@
+.container{
+    margin-left: auto;
+    margin-right:auto;
+    width:370px;
+    margin-top: 3rem;
+}
+#question{
+    display: none;
+}
+#result{
+    display: none;
+}

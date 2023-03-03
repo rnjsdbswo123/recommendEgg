@@ -1,0 +1,21 @@
+.progress{
+    width:100%;
+    height:30px;
+    background-color: pink;
+    position: relative;
+
+    
+}
+
+.progressBar{
+    position: absolute;
+    background-color: brown;
+    top:0;
+    left:0;
+    height: 30px;
+    text-align: center;
+    transition: width .6s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
