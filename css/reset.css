@@ -26,6 +26,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	text-align: center;
+	font-size: 18px;
 }
 ol, ul {
 	list-style: none;

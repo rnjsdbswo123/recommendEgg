@@ -1,8 +1,10 @@
+
 .container{
     margin-left: auto;
     margin-right:auto;
     width:370px;
     margin-top: 3rem;
+    height:100%;
 }
 #question{
     display: none;
@@ -10,3 +12,11 @@
 #result{
     display: none;
 }
+
+
+
+@media (max-width: 800px) {
+    .container {
+      width:85%;
+    }
+  }
