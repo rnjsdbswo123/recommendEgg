@@ -5,10 +5,15 @@
 .logo{
     
     display:flex;
-    width:200px;
+    width:140px;
     text-align: center;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
 }
 
+.mainImg{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width:100%;
+}

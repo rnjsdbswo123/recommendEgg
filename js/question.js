@@ -17,7 +17,7 @@ var QnAList = [
         ]
     },
     {
-        q:"일정을 위해 집을 나선 당신 눈앞에 나타난 귀여운 강아지!<br>이럴때 당신은?",
+        q:"일정을 위해 집을 나선 당신<br>눈앞에 나타난 귀여운 강아지!",
         a:[
             {
                 ans : '신경쓸 겨를 없다. 바쁘다 바빠 나는 나의 길을 간다!',
@@ -34,7 +34,7 @@ var QnAList = [
         ]
     },
     {
-        q:"일정을 마치고 집으로 돌아가는 길, 냉장고에 계란이 똑 떨어진 게 생각났다!<br>계란 고를 때 당신의 선택은?",
+        q:"일정을 마치고 집으로 돌아가는 길,<br>냉장고에 계란이 똑 떨어진 게 생각났다!<br>계란 고를 때 당신의 선택은?",
         a:[
             {
                 ans : '무조건 저렴한걸로!',
@@ -51,7 +51,7 @@ var QnAList = [
         ]
     },
     {
-        q:"계란을 낳는 닭도 중요하다는 점원의 말에 당신의 생각은?",
+        q:"계란을 낳는 닭도 중요하다는 점원의 말에<br>당신의 생각은?",
         a:[
             {
                 ans : '건강한 닭이 낳은 계란이라면 괜찮겠지',
@@ -68,7 +68,7 @@ var QnAList = [
         ]
     },
     {
-        q:"이왕 깐깐하게 고르는거 닭이 먹는 사료에 대한 궁금증이 든 당신",
+        q:"이왕 고르는거 닭이 먹는 사료에 대한<br>궁금증이 든 당신",
         a:[
             {
                 ans : '사료도 중요하긴 할 거 같은데 잘 모르겠어ㅠㅠ',
@@ -85,7 +85,7 @@ var QnAList = [
         ]
     },
     {
-        q:"장보기를 마친 후 드는 생각, 계란은 왜 이렇게 금방금방 먹는지ㅜㅜ",
+        q:"장보기를 마친 후 드는 생각,<br>계란은 왜 이렇게 금방 먹는지ㅜㅜ",
         a:[
             {
                 ans : '계란도 요구르트처럼 정기적으로 집 앞에 배송왔으면 좋겠어~',
@@ -119,7 +119,7 @@ var QnAList = [
         ]
     },
     {
-        q:"하루를 마무리하고 침대에 누운 당신,<br>장을 보기 위해 자연스레 켠 애월아빠들 앱에서 가장 중요하게 보는 것은?",
+        q:"하루를 마무리하고 침대에 누운 당신,<br>장을 보기 위해 켠 애월아빠들 앱에서<br>가장 중요하게 보는 것은?",
         a:[
             {
                 ans : '오늘은 어떤걸 할인하나~? 선착순 특가 상품 확인.',
@@ -173,7 +173,7 @@ let questionNum = 0;
 let answerValue = []
 function getQnA(){
     if(questionNum < QnAList.length){
-        question.querySelector('.question').innerHTML = QnAList[questionNum].q
+        question.querySelector('.question').innerHTML = `${QnAList[questionNum].q}`
         let anwerList = []
         let getAnswer = ""
         for(i = 0; i < QnAList[questionNum].a.length; i++){
@@ -183,8 +183,9 @@ function getQnA(){
             getAnswer += `<button onclick="answerClick(this)">${anwerList[i]}</button>`
         }
         question.querySelector('.answer').innerHTML = getAnswer;
-
-
+        question.querySelector('.qnaImg').innerHTML = `<img src="./img/${questionNum+1}.png" alt="">`;
+        
+        
         if(questionNum >= 1){
             console.log(QnAList[questionNum-1])
         }
@@ -217,7 +218,7 @@ function answerClick(test){
             getAnswer += `<button onclick="answerClick(this)">${anwerList[i]}</button>`
         }
         question.querySelector('.answer').innerHTML = getAnswer;
-
+        question.querySelector('.qnaImg').innerHTML = `<img src="./img/${questionNum+1}.png" alt="">`;
         
         question.querySelector('.progressBar').innerText = `${questionNum+1}/${QnAList.length}`
         let gage = `${((questionNum+1)/QnAList.length)*100}%`
@@ -239,6 +240,7 @@ function answerClick(test){
         questionNum += 1;
         return questionNum;
     }
+    
     if(questionNum > QnAList.length){
         console.log('결과 보여주기')
         for(i = 0; i < answerValue.length; i++){
