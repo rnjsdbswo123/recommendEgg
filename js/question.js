@@ -139,31 +139,38 @@ var QnAList = [
 var typeList = [
     {
         type : "영양란",
-        value : 0
+        value : 0,
+        anchor : "nutrition"
     },
     {
         type : "동물복지 유정란",
-        value : 0
+        value : 0,
+        anchor : "cagefree"
     },
     {
         type : "NON-GMO 동물복지 유정란",
-        value : 0
+        value : 0,
+        anchor : "nongmo"
     },
     {
         type : "화산석 구운란",
-        value : 0
+        value : 0,
+        anchor : "volcanic"
     },
     {
         type : "화산석 동물복지 구운유정란",
-        value : 0
+        value : 0,
+        anchor : "volcanicCagefree"
     },
     {
         type : "구엄닭 방목유정란",
-        value : 0
+        value : 0,
+        anchor : "gueomDak"
     },
     {
         type : "감동란",
-        value : 0
+        value : 0,
+        anchor : "touching"
     }
 ]
 
@@ -238,31 +245,41 @@ function answerClick(test){
             }
         }
         questionNum += 1;
+
+
+        if(questionNum > QnAList.length){
+            console.log('결과 보여주기')
+            for(i = 0; i < answerValue.length; i++){
+                for (j = 0; j < answerValue[i].length; j++){
+                    for(k = 0; k < typeList.length; k++){
+                        if(typeList[k].type === answerValue[i][j]){
+                            typeList[k].value += 1
+                        }
+                    }
+                    console.log(answerValue[i][j])
+                }
+            }
+            let valueResult;
+            valueResult = typeList.sort(function (a, b){
+                return a.value - b.value
+                }
+            )
+            console.log(valueResult)
+            console.log(valueResult.length)
+            console.log(valueResult[valueResult.length-1])
+            console.log(`당신에게 맞는 계란은${valueResult[valueResult.length-1].type}입니다!`)
+            let resultAnchor = valueResult[valueResult.length-1].anchor
+            location.href =`file:///Users/yoonjaekwon/Documents/GitHub/recommendEgg/result/${resultAnchor}.html`
+
+        }
+
+
+
+
         return questionNum;
     }
     
-    if(questionNum > QnAList.length){
-        console.log('결과 보여주기')
-        for(i = 0; i < answerValue.length; i++){
-            for (j = 0; j < answerValue[i].length; j++){
-                for(k = 0; k < typeList.length; k++){
-                    if(typeList[k].type === answerValue[i][j]){
-                        typeList[k].value += 1
-                    }
-                }
-                console.log(answerValue[i][j])
-            }
-        }
-        let valueResult;
-        valueResult = typeList.sort(function (a, b){
-            return a.value - b.value
-            }
-        )
-        console.log(valueResult)
-        console.log(valueResult.length)
-        console.log(valueResult[valueResult.length-1])
-        console.log(`당신에게 맞는 계란은${valueResult[valueResult.length-1].type}입니다!`)
-    }
+
 
 
     
