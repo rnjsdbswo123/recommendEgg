@@ -165,12 +165,12 @@ var typeList = [
     {
         type : "구엄닭 방목유정란",
         value : 0,
-        anchor : "nutrition"
+        anchor : "gueomdak"
     },
     {
         type : "감동란",
         value : 0,
-        anchor : "nutrition"
+        anchor : "touching"
     }
 ]
 
