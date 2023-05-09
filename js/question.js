@@ -160,17 +160,17 @@ var typeList = [
     {
         type : "화산석 동물복지 구운유정란",
         value : 0,
-        anchor : "volcanicCagefree"
+        anchor : "volcaniccagefree"
     },
     {
         type : "구엄닭 방목유정란",
         value : 0,
-        anchor : "gueomDak"
+        anchor : "nutrition"
     },
     {
         type : "감동란",
         value : 0,
-        anchor : "touching"
+        anchor : "nutrition"
     }
 ]
 
