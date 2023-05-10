@@ -269,7 +269,7 @@ function answerClick(test){
             console.log(valueResult[valueResult.length-1])
             console.log(`당신에게 맞는 계란은${valueResult[valueResult.length-1].type}입니다!`)
             let resultAnchor = valueResult[valueResult.length-1].anchor
-            location.href =`file:///Users/yoonjaekwon/Documents/GitHub/recommendEgg/result/${resultAnchor}.html`
+            location.href =`./result/${resultAnchor}.html`
 
         }
 
