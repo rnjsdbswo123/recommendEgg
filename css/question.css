@@ -58,3 +58,7 @@
 .qnaImg img{
     width:100%;
 }
+
+#testStart{
+    font-weight: bold;
+}
